@@ -1,7 +1,16 @@
-	</div><!-- .wrapper -->
-		<footer class="footer">
+<!-- .wrapper -->
+		<!-- <footer class="footer">
 			<div class="container container-inner">
 				<div class="footer__copyright">&copy; {{ now.Format "2006" }} {{ .Site.Title }}. <span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span></div>
+			</div>
+		</footer> -->
+
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<p>
+				&copy; {{ now.Format "2006" }} {{ .Site.Title }}. {{ T "footer_credits" | safeHTML }}
+			
+				</p>
 			</div>
 		</footer>
 	</div><!-- .container-outer -->

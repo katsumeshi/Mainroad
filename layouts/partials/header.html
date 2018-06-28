@@ -14,23 +14,41 @@
 	{{- range .AlternativeOutputFormats }}
 	<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink | safeURL }}">
 	{{- end }}
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"> -->
 	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-	<script type="text/javascript" src="{{ "js/scripts.js" | relURL }}"></script>
+	<!-- <script type="text/javascript" src="{{ "js/scripts.js" | relURL }}"></script> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanjp.min.css">
 	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
 	{{ template "_internal/google_analytics_async.html" . }}
 </head>
 <body class="body {{ if (.Site.Params.leftsidebar) or (.Params.leftsidebar) }}body-left-sidebar{{ else }}body-right-sidebar{{ end }}">
-	<div class="container container-outer">
-		<header class="header">
-			<div class="container container-inner">
-				<div class="logo" role="banner">
-					<a class="logo__link" href="{{ "" | relLangURL }}" title="{{ .Site.Title }}" rel="home">
-						<div class="logo__title">{{ .Site.Title }}</div>
-						{{ with .Site.Params.subtitle }}<div class="logo__tagline">{{ . }}</div>{{ end }}
-					</a>
+	<div class="container is-fullhd">
+		<section class="hero is-danger">
+				<div class="hero-body">
+					<nav class="level">
+						<div class="level-left">
+							<div>
+								<a class="title" href="{{ "" | relLangURL }}"  rel="home">
+									<h1 class="title has-text-white">{{ .Site.Title }}</h1>
+								</a>
+								<a class="subtitle is-hidden-mobile" href="{{ "" | relLangURL }}" title="{{ .Site.Title }}" rel="home">
+									<h2 class="subtitle has-text-white">{{ with .Site.Params.subtitle }}
+									{{ . }}</h2>{{ end }}
+								</a>
+							</div>
+						</div>
+						<div class="level-right is-hidden-mobile">
+							<div class="level-item has-text-centered">
+								<div class="field">
+									<div class="control">
+										<input class="input is-primary" style="width: 300px" type="text" placeholder="キーワード検索">
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
 				</div>
-			</div>
-			{{ partial "menu.html" . }}
-		</header>
-		<div class="wrapper clearfix">
+		</section>
+		<div class="columns" style="margin: 0;">

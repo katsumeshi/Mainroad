@@ -1,13 +1,20 @@
 {{- if .Site.Params.widgets.recent_articles }}
 <div class="widget-recent widget">
 	<h4 class="widget__title">{{ T "recent_title" }}</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			{{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 10) }}
-			{{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "post"))) }}
-			<li class="widget__item"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-			{{- end }}
-		</ul>
+	{{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 10) }}
+	{{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "post"))) }}
+	<div class="columns is-mobile">
+		{{- if .Params.thumbnail }}
+		<div class="column is-one-quarter" style="border-bottom: 1px solid #ececec">
+			<figure class="image is-square">
+				<a href="{{ .Permalink }}">
+					<img style="object-fit:cover;" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" />
+				</a>
+			</figure>
+		</div>
+		{{- end }}
+		<div class="column" style="border-bottom: 1px solid #ececec"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
 	</div>
+	{{- end }}
 </div>
 {{- end }}

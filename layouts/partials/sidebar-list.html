@@ -1,11 +1,12 @@
-<aside class="sidebar">
-	{{ partial "widgets/search.html" . }}
+<div class="column sidebar-width">
+	{{ partial "widgets/about.html" . }}
 	{{ partial "widgets/recent.html" . }}
 	{{ partial "widgets/categories.html" . }}
 	{{ partial "widgets/social.html" . }}
 	{{ partial "widgets/taglist.html" . }}
+	{{ partial "widgets/popular.html" . }}
 
 	{{- if and (not .Site.Params.widgets.search) (not .Site.Params.widgets.recent_articles) (not .Site.Params.widgets.categories) (not .Site.Params.widgets.social) (not .Site.Params.widgets.taglist) }}
 	<p class="sidebar__warning"><strong>{{ T "sidebar_warning" }}:</strong><br>{{ T "sidebar_recommendation" }}</p>
 	{{- end }}
-</aside>
+</div>

@@ -38,13 +38,7 @@
 
 # Recent Posts widget
 - id: recent_title
-  translation: 新着記事
-
-- id: popular_title
-  translation: 人気記事
-
-- id: related_title
-  translation: 関連記事
+  translation: 新着エントリー
 
 # Social widget
 - id: social_title

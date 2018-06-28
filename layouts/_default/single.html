@@ -1,26 +1,49 @@
 {{ partial "header.html" . }}
 
-<main class="main content">
+<main class="column">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">{{ .Title }}</h1>
-			{{- if or (not .Date.IsZero) .Params.categories }}<div class="post__meta meta">{{ partial "post_meta.html" . }}</div>{{ end }}
+			<h2 class="title is-2">{{ .Title }}</h2>
+			{{- if or (not .Date.IsZero) .Params.categories }}
+			<div class="post__meta meta">{{ partial "post_meta.html" . }}</div>{{ end }}
 		</header>
 		{{- if .Params.thumbnail }}
 		<figure class="post__thumbnail">
 			<img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}">
 		</figure>
-		{{- end }}
-		{{- partial "post_toc.html" . -}}
+		{{- end }} {{- partial "post_toc.html" . -}}
 		<div class="post__content clearfix">
 			{{ .Content }}
 		</div>
 		{{ partial "post_tags.html" . }}
 	</article>
-	{{ partial "authorbox.html" . }}
-	{{ partial "post_nav.html" . }}
-	{{ partial "comments.html" . }}
+	{{ partial "post_nav.html" . }} {{ partial "comments.html" . }}
 </main>
 
-{{ partial "sidebar.html" . }}
+{{ partial "sidebar-single.html" . }} 
+
+</div>
+<div class="columns shareSticky is-mobile">
+		<a class="button column shareButton" href="https://twitter.com/__yukim" target="_blank" style="background-color: #55acee;">
+			<span class="icon">
+				<i class="fab fa-twitter" style="color: #fff"></i>
+			</span>
+		</a>
+		<a class="button column shareButton" href="https://github.com/katsumeshi" target="_blank" style="background-color: #315096;">
+			<span class="icon">
+				<i class="fab fa-facebook-f" style="color: #fff"></i>
+			</span>
+		</a>
+		<a class="button column shareButton" href="https://www.linkedin.com/in/yuki-matsushita-b5a391b8/" target="_blank" style="background-color: #008fde;">
+			<span class="icon">
+				<i class="fab fa-hatena" style="color: #fff"></i>
+			</span>
+		</a>
+		<a class="button column shareButton" href="{{ .Site.BaseURL }}/index.xml" target="_blank" style="background-color: #ff1f4b;">
+			<span class="icon">
+				<i class="fab fa-get-pocket" style="color: #fff"></i>
+			</span>
+		</a>
+	</div>
+
 {{ partial "footer.html" . }}
