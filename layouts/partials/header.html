@@ -34,8 +34,11 @@
 									<h1 class="title has-text-white">{{ .Site.Title }}</h1>
 								</a>
 								<a class="subtitle is-hidden-mobile" href="{{ "" | relLangURL }}" title="{{ .Site.Title }}" rel="home">
-									<h2 class="subtitle has-text-white">{{ with .Site.Params.subtitle }}
-									{{ . }}</h2>{{ end }}
+									<h2 class="subtitle has-text-white">
+										{{ with .Site.Params.subtitle }}
+											{{ . }}
+									</h2>
+									{{ end }}
 								</a>
 							</div>
 						</div>
