@@ -31,9 +31,10 @@
 			{{ if gt (len $postSections) 1 }}s{{ end }}, they'll appear here.</p>
 	</div>
 	{{- end }} 
-	{{ else }} {{- range .Paginator.Pages }}
-	 {{- .Render "summary" }}
-	 {{- end }} 
+		{{ else }}
+		{{- range .Paginator.Pages }}
+			{{- .Render "summary" }}
+		{{- end }} 
 	{{- end }} 
 	{{ partial "pagination.html" . }}
 </main>

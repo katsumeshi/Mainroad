@@ -6,6 +6,8 @@
 
 body {
 	font-family: YakuHanJP , "Open Sans", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Arial", sans-serif !important;
+	line-height : 1.75 !important;
+	letter-spacing : 0.05rem !important;
 }
   
 
@@ -81,6 +83,49 @@ a:hover {
 		margin: 0 !important;
 		width: 100%;
 	}
+}
+
+
+/* h3 {
+
+	padding: 0.25em 0.5em !important;
+	color: #494949;
+	background: transparent;
+	border-left: solid 5px #7db4e6;
+} */
+h2{
+	position: relative;
+	background: #1BB4D3;
+	color:#fff;
+	font-size: 1.5em !important;
+	font-weight: bold !important;
+	border-radius: 5px;
+	margin-top: 40px !important;;
+	margin-bottom: 40px !important;;
+	padding: 15px 15px !important;;
+}
+h2:after{
+	position: absolute;
+	content: '' !important;
+	top: 100%;
+	left: 30px;
+	border: 8px solid transparent;
+	border-top: 10px solid #1BB4D3;
+	width: 0;
+	height: 0;
+}
+
+h3{
+	font-size: 21px !important;
+	border-left:4px solid;
+	padding: .2em 0 .2em .8em !important;
+	margin-top: 1.8em !important;
+	margin-bottom: 1em !important;
+	font-weight: bold !important;
+}
+
+p {
+	margin: 0 0 20px !important;
 }
 
 /* *,

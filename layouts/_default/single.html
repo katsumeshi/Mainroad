@@ -3,7 +3,7 @@
 <main class="column">
 	<article class="post">
 		<header class="post__header">
-			<h2 class="title is-2">{{ .Title }}</h2>
+			<h1 class="title is-1">{{ .Title }}</h1>
 			{{- if or (not .Date.IsZero) .Params.categories }}
 			<div class="post__meta meta">{{ partial "post_meta.html" . }}</div>{{ end }}
 		</header>

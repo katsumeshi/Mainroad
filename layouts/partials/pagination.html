@@ -1,24 +1,32 @@
 
 <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-		<ul class="pagination-list">
-	{{- if .Paginator.HasPrev }}
-	<li><a class="pagination-link" aria-label="prev" href="{{ .Paginator.Prev.URL }}"><<</a>
-	{{- end }}
-	{{- if not .Paginator.HasNext }}
-	<li><a class="pagination-link" aria-label="next" href="{{ .Paginator.Prev.Prev.URL }}">{{ sub .Paginator.PageNumber 2 }}</a>
-	{{- end }}
-	{{- if .Paginator.HasPrev }}
-	<li><a class="pagination-link" aria-label="prev" href="{{ .Paginator.Prev.URL }}">{{ sub .Paginator.PageNumber 1 }}</a>
-	{{- end }}
-	<li><a class="pagination-link is-current" aria-label="current" aria-current="page">{{ .Paginator.PageNumber }}</a></span>
-	{{- if .Paginator.HasNext }}
-	<li><a class="pagination-link" aria-label="next" href="{{ .Paginator.Next.URL }}">{{ add .Paginator.PageNumber 1 }}</a>
-	{{- end }}
-	{{- if not .Paginator.HasPrev }}
-	<li><a class="pagination-link" aria-label="next" href="{{ .Paginator.Next.Next.URL }}">{{ add .Paginator.PageNumber 2 }}</a>
-	{{- end }}
-	{{- if .Paginator.HasNext }}
-	<li><a class="pagination-link" aria-label="next" href="{{ .Paginator.Next.URL }}">>></a>
-	{{- end }}
+	<ul class="pagination-list">
+		{{- if .Paginator.HasPrev }}
+		<li><a class="pagination-link" aria-label="prev1" href="{{ .Paginator.Prev.URL }}"><<</a></li>
+		{{- end }}
+		{{- if .Paginator.HasNext }}
+			{{- if .Paginator.Next.HasNext }}
+				{{- if eq .Paginator.Last.PageNumber .Paginator.PageNumber }}
+				<li><a class="pagination-link" aria-label="prev2" href="{{ .Paginator.Prev.Prev.URL }}">{{ sub .Paginator.PageNumber 2 }}</a></li>
+				{{- end }}
+			{{- end }}
+		{{- end }}
+		{{- if .Paginator.HasPrev }}
+		<li><a class="pagination-link" aria-label="prev3" href="{{ .Paginator.Prev.URL }}">{{ sub .Paginator.PageNumber 1 }}</a></li>
+		{{- end }}
+		<li><a class="pagination-link is-current" aria-label="current" aria-current="page">{{ .Paginator.PageNumber }}</a></li>
+		{{- if .Paginator.HasNext }}
+		<li><a class="pagination-link" aria-label="next1" href="{{ .Paginator.Next.URL }}">{{ add .Paginator.PageNumber 1 }}</a></li>
+		{{- end }}
+		{{- if .Paginator.HasNext }}
+			{{- if .Paginator.Next.HasNext }}
+				{{- if eq .Paginator.First.PageNumber .Paginator.PageNumber }}
+					<li><a class="pagination-link" aria-label="next2" href="{{ .Paginator.Next.Next.URL }}">{{ add .Paginator.PageNumber 2 }}</a></li>
+				{{- end }}
+			{{- end }}
+		{{- end }}
+		{{- if .Paginator.HasNext }}
+		<li><a class="pagination-link" aria-label="next3" href="{{ .Paginator.Next.URL }}">>></a></li>
+		{{- end }}
 	</ul>
 </nav>
