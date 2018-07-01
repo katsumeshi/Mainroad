@@ -17,3 +17,5 @@ gulp.task("scss", function () {
 gulp.task("watch", ["scss"], function () {
     gulp.watch("src/scss/**/*", ["scss"])
 })
+
+gulp.task("default", ["watch"])
