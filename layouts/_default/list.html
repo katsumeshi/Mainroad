@@ -16,8 +16,14 @@
 	{{- if .IsHome }} 
 	{{- $postSections := ($.Param "postSections" | default (slice "post")) }}
 	 {{- $paginator := .Paginate ( where .Data.Pages "Section" "in" $postSections ) }} 
-	 {{- range $paginator.Pages }} 
-		{{- .Render "summary" }} 
+	 {{- range $index, $element := $paginator.Pages }} 
+		{{- $element.Render "summary" }} 
+		{{ if eq $index 4 }}
+			{{ partial "widgets/ad4.html" . }}
+		{{ end }}
+		{{ if eq $index 9 }}
+			{{ partial "widgets/ad5.html" . }}
+		{{ end }}
 	{{- end }}
 	 {{- if eq $paginator.TotalNumberOfElements 0 }}
 	<div class="warning">

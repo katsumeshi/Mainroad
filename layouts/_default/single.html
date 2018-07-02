@@ -17,7 +17,16 @@
 		</div>
 		{{ partial "post_tags.html" . }}
 	</article>
-	{{ partial "post_nav.html" . }} {{ partial "comments.html" . }}
+	{{ partial "post_nav.html" . }}
+	<div class="align-center-desktop">
+		<div class="align-center-mobile">
+			{{ partial "widgets/ad2.html" . }}
+		</div>
+		<div class="align-center-mobile">
+			{{ partial "widgets/ad3.html" . }}
+		</div>
+	</div>
+	{{ partial "comments.html" . }}
 </main>
 
 {{ partial "sidebar-single.html" . }} 
