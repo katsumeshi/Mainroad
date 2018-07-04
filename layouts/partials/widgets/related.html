@@ -2,7 +2,7 @@
     {{ $related := .Site.RegularPages.Related . }}
         {{- if gt (len $related) 0 }}
             <div class="widget-recent widget sticky">
-                <h4 class="widget__title">{{ T "related_title" }}</h4>
+                <h1 class="widget__title">{{ T "related_title" }}</h1>
                 {{ $relatedLimited := $related | first 10 }}
                     {{ with $relatedLimited }}
                     {{ range . }}

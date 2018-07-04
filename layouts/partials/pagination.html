@@ -2,7 +2,7 @@
 <nav class="pagination is-centered" role="navigation" aria-label="pagination">
 	<ul class="pagination-list">
 		{{- if .Paginator.HasPrev }}
-		<li><a class="pagination-link" aria-label="prev1" href="{{ .Paginator.Prev.URL }}"><<</a></li>
+		<li><a class="pagination-link" aria-label="prev1" href="{{ .Paginator.Prev.URL }}"><i class="fas fa-angle-double-left"></i></a></li>
 		{{- end }}
 		{{- if .Paginator.HasNext }}
 			{{- if .Paginator.Next.HasNext }}
@@ -14,7 +14,7 @@
 		{{- if .Paginator.HasPrev }}
 		<li><a class="pagination-link" aria-label="prev3" href="{{ .Paginator.Prev.URL }}">{{ sub .Paginator.PageNumber 1 }}</a></li>
 		{{- end }}
-		<li><a class="pagination-link is-current" aria-label="current" aria-current="page">{{ .Paginator.PageNumber }}</a></li>
+		<li class="pagination-link is-current" aria-label="current" aria-current="page" >{{ .Paginator.PageNumber }}</li>
 		{{- if .Paginator.HasNext }}
 		<li><a class="pagination-link" aria-label="next1" href="{{ .Paginator.Next.URL }}">{{ add .Paginator.PageNumber 1 }}</a></li>
 		{{- end }}
@@ -26,7 +26,7 @@
 			{{- end }}
 		{{- end }}
 		{{- if .Paginator.HasNext }}
-		<li><a class="pagination-link" aria-label="next3" href="{{ .Paginator.Next.URL }}">>></a></li>
+		<li><a class="pagination-link" aria-label="next3" href="{{ .Paginator.Next.URL }}"><i class="fas fa-angle-double-right"></i></a></li>
 		{{- end }}
 	</ul>
 </nav>

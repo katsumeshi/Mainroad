@@ -1,6 +1,6 @@
 {{- if .Site.Params.widgets.popular }}
 <div class="widget-recent widget sticky">
-    <h4 class="widget__title">{{ T "popular_title" }}</h4>
+    <h1 class="widget__title">{{ T "popular_title" }}</h1>
         {{ range (where .Site.Pages "File.Path" "in" .Site.Data.popular_data.populars) }}
              <div class="columns  is-mobile">
                 {{- if .Params.thumbnail }}

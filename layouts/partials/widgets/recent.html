@@ -1,6 +1,6 @@
 {{- if .Site.Params.widgets.recent_articles }}
 <div class="widget-recent widget">
-	<h4 class="widget__title">{{ T "recent_title" }}</h4>
+	<h1 class="widget__title">{{ T "recent_title" }}</h1>
 	{{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 10) }}
 	{{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "post"))) }}
 	<div class="columns is-mobile">
