@@ -32,27 +32,7 @@
 {{ partial "sidebar-single.html" . }} 
 
 </div>
-<div class="columns shareSticky is-mobile">
-		<a class="button column shareButton" href="https://twitter.com/intent/tweet?text={{ .Title }} - {{ .Site.Title }}%0a{{ substr .Site.BaseURL 0 -1 }}{{ .URL  }} @__yukim" target="_blank" style="background-color: #55acee;">
-			<span class="icon">
-				<i class="fab fa-twitter" style="color: #fff"></i>
-			</span>
-		</a>
-		<a class="button column shareButton" href="https://www.facebook.com/sharer/sharer.php?u={{ substr .Site.BaseURL 0 -1 }}{{ .URL  }}" target="_blank" style="background-color: #315096;">
-			<span class="icon">
-				<i class="fab fa-facebook-f" style="color: #fff"></i>
-			</span>
-		</a>
-		<a class="button column shareButton" href="http://b.hatena.ne.jp/add?mode=confirm&url={{ substr .Site.BaseURL 0 -1 }}{{ .URL  }}&title={{ .Title }}" target="_blank" rel="nofollow" style="background-color: #008fde;">
-			<span class="icon">
-				<i class="fab fa-hatena" style="color: #fff"></i>
-			</span>
-		</a>
-		<a class="button column shareButton" href="http://getpocket.com/edit?url={{ substr .Site.BaseURL 0 -1 }}{{ .URL  }}&title={{ .Title }}" target="_blank" style="background-color: #ff1f4b;">
-			<span class="icon">
-				<i class="fab fa-get-pocket" style="color: #fff"></i>
-			</span>
-		</a>
-	</div>
+
+{{ partial "widgets/share.html" . }}
 
 {{ partial "footer.html" . }}
