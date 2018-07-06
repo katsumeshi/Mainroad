@@ -10,12 +10,12 @@
 	{{- end }}
 	<div class="column">
 		<header class="list__header">
-			<h4 class="title is-4">
+			<h2 class="title is-4">
 				<a href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a>
-			</h4>
+			</h2>
 			{{- if or (not .Date.IsZero) .Params.categories }}<div class="list__meta meta">{{ partial "post_meta.html" . }}</div>{{- end }}
 		</header>
-		<p class="subtitle is-6">
+		<p>
 			{{ .Summary | plainify | safeHTML }}
 		</p>
 		{{- if .Site.Params.readmore }}
