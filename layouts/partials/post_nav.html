@@ -1,12 +1,15 @@
 {{- if .Site.Params.post_navigation }}
 {{- if or (.PrevInSection) (.NextInSection) }}
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
-	{{- if .PrevInSection }}
-		<a class="previous" href="{{.PrevInSection.RelPermalink}}" rel="prev"><p class="post-nav__post-title">< {{.PrevInSection.Title}}</p></a>
-	{{- end }}
-	{{- if .NextInSection }}
-		<a class="next" href="{{.NextInSection.RelPermalink}}" rel="next"><p class="post-nav__post-title">{{.NextInSection.Title}} ></p></a>
-	{{- end }}
-</nav>
+<div class="pagination--container">
+	<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+			{{- if .PrevInSection }}
+				<a class="previous" href="{{.PrevInSection.RelPermalink}}" rel="prev"><p class="post-nav__post-title">< {{.PrevInSection.Title}}</p></a>
+			{{- end }}
+			{{- if .NextInSection }}
+				<a class="next" href="{{.NextInSection.RelPermalink}}" rel="next"><p class="post-nav__post-title">{{.NextInSection.Title}} ></p></a>
+			{{- end }}
+		
+	</nav>
+</div>
 {{- end }}
 {{- end }}

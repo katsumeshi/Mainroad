@@ -216,13 +216,18 @@ a:hover {
 }
 
 .pagination {
-	margin-top: 60px;
-	margin-bottom: 30px;
+	margin-top: 1em;
+	margin-bottom: 1em;
 
 	.is-current {
 		color: $mainColor;
 		background-color: #fff;
 		border-color: #dbdbdb;
+	}
+	
+	&--container {
+		margin-top: 3em;
+		border-top: 3px solid #bbb;
 	}
 
 	a:hover {
