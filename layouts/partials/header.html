@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ .Title }}</title>
-	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{else}}{{ .Params.Description }}{{end}}"> -->
+	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{else}}{{ .Params.Description }}{{end}}">
 	{{ .Hugo.Generator }}
 	{{- range .AlternativeOutputFormats }}
 	<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink | safeURL }}">
 	{{- end }}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanjp.min.css">
 	<link rel="stylesheet" href="{{ "css/prism.css" | relURL }}">
 	<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
@@ -31,7 +31,7 @@
 										<h1 class="title has-text-white">{{ .Site.Title }}</h1>
 									</a>
 									<a class="subtitle is-hidden-mobile" href="{{ "" | relLangURL }}" title="{{ .Site.Title }}" rel="home">
-										<h2 class="subtitle has-text-white">
+										<h2 class="subtitle hero--subtitle-margin has-text-white is-6">
 											{{ with .Site.Params.subtitle }}
 												{{ . }}
 										</h2>
@@ -44,7 +44,6 @@
 									<div class="field">
 										<div class="control">
 											{{- partial "widgets/search.html" . -}}
-											<!-- <input class="input" style="width: 300px" type="text" placeholder="キーワード検索"> -->
 										</div>
 									</div>
 								</div>
