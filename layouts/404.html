@@ -1,11 +1,16 @@
 {{ partial "header.html" . }}
 
-<main class="main content" role="main">
-	<div class="warning">
-		<h1 class="warning__headline">{{ T "404_title" }}</h1>
-		<p class="warning__text">{{  T "404_text" }} <a href="{{ "" | relLangURL }}">{{  T "404_linktext" }}</a>.</p>
+<main class="container warning--container" role="main">
+	<div class="has-text-centered" style="margin: 0 12px;">
+		<iframe src="https://giphy.com/embed/VwoJkTfZAUBSU"  height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/89a-eightninea-VwoJkTfZAUBSU"></a></p>
+		<h1 class="title is-3 warning--title is-spaced">{{ T "404_title" }}</h1>
+		<p class="subtitle is-6 warning--subtitle">{{  T "404_text" }} 
+		</p>
+		<a class="warning--link" href="{{ "" | relLangURL }}">{{  T "404_linktext" }}</a>
 	</div>
 </main>
 
+
 {{ partial "sidebar-list.html" . }}
+</div>
 {{ partial "footer.html" . }}
