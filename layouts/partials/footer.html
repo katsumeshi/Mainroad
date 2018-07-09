@@ -29,6 +29,10 @@
 		c4.rel = 'stylesheet';
 		c4.href = '{{ .Site.BaseURL }}css/prism.css';
 		s.parentNode.insertBefore(c4, s);
+		var c5 = d.createElement('link');
+		c5.rel = 'stylesheet';
+		c5.href = '{{ .Site.BaseURL }}css/main.css';
+		s.parentNode.insertBefore(c5, s);
 		})(document);
 </script>
 </body>
