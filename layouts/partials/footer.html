@@ -10,7 +10,25 @@
 			</div>
 		</footer>
 {{- partial "mathjax.html" . -}}
-
-<script type="text/javascript" src="{{ "js/prism.js" | relURL }}"></script>
+<script>
+		(function(d){
+		var s = d.getElementsByTagName('script')[0];
+		var c1 = d.createElement('link');
+		c1.rel = 'stylesheet';
+		c1.href = 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css';
+		s.parentNode.insertBefore(c1, s);
+		var c2 = d.createElement('link');
+		c2.rel = 'stylesheet';
+		c2.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
+		s.parentNode.insertBefore(c2, s);
+		var c3 = d.createElement('link');
+		c3.rel = 'stylesheet';
+		c3.href = 'https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanjp.min.css';
+		s.parentNode.insertBefore(c3, s);
+		var c4 = d.createElement('link');
+		c4.rel = 'stylesheet';
+		c4.href = '{{ .Site.BaseURL }}css/prism.css';
+		s.parentNode.insertBefore(c4, s);
+		</script>
 </body>
 </html>
