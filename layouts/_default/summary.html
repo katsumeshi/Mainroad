@@ -6,8 +6,8 @@
 				{{ $thumbnail := .Params.thumbnail}}
 				{{ with .Site.GetPage "section" "images" }}
 					{{ $r := .Resources.GetMatch $thumbnail }}
-					{{ $image200x := ($r.Fill "200x200") }} 
-					 <img src="{{ $image200x.RelPermalink }}">
+					{{ $img := ($r.Fill "400x400") }} 
+					 <img src="{{ $img.RelPermalink }}">
 				{{ end }}
 			</a>
 		</figure>
