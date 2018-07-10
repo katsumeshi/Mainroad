@@ -1,9 +1,14 @@
 <article class="columns" style="margin: 0;">
 	{{- if .Params.thumbnail }}
 	<div class="column is-one-quarter">
-		<figure class="image is-square">
+		<figure class=" is-square">
 			<a href="{{ .Permalink }}">
-				<img style="object-fit:cover;" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" />
+				{{ $thumbnail := .Params.thumbnail}}
+				{{ with .Site.GetPage "section" "images" }}
+					{{ $r := .Resources.GetMatch $thumbnail }}
+					{{ $image200x := ($r.Fill "200x200") }} 
+					 <img src="{{ $image200x.RelPermalink }}">
+				{{ end }}
 			</a>
 		</figure>
 	</div>

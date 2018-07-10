@@ -7,7 +7,12 @@
                 <div class="column is-one-quarter" style="border-bottom: 1px solid #ececec">
                     <figure class="image is-square">
                         <a href="{{ .Permalink }}">
-                            <img style="object-fit:cover;" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" />
+                            {{ $thumbnail := .Params.thumbnail}}
+                            {{ with .Site.GetPage "section" "images" }}
+                                {{ $r := .Resources.GetMatch $thumbnail }}
+                                {{ $img := ($r.Fill "100x100") }} 
+                                <img src="{{ $img.RelPermalink }}">
+                            {{ end }}
                         </a>
                     </figure>
                 </div>
