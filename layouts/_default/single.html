@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <main class="column is-9">
-	<article class="post">
+	<article class="post single-page">
 		<header class="post__header">
 			{{- if or (not .Date.IsZero) .Params.categories }}
 			<div class="post__meta meta">{{ partial "post_meta.html" . }}</div>{{ end }}
