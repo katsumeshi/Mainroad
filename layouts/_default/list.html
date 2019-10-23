@@ -14,7 +14,7 @@
 	{{- end }}
 	{{- if .IsHome }} 
 	{{- $postSections := ($.Param "postSections" | default (slice "post")) }}
-	 {{- $paginator := .Paginate ( where .Data.Pages "Section" "in" $postSections ) }} 
+	 {{- $paginator := .Paginate ( where .Site.RegularPages "Section" "in" $postSections ) }} 
 	 {{- range $index, $element := $paginator.Pages }} 
 		{{- $element.Render "summary" }} 
 		{{ if eq $index 4 }}
