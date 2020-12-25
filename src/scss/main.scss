@@ -1,7 +1,7 @@
 $mainColor : #CB1B45;
 
 .sticky {
-    postion: -webkit-sticky;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
 }
@@ -19,6 +19,26 @@ p {
 }
 
 h1 {
+	font-weight: bold;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+h3 {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+h4 {
+	font-weight: bold;
+	font-size: 1em;
+}
+h5 {
+	font-weight: bold;
+	font-size: 1em;
+}
+h6 {
 	font-weight: bold;
 	font-size: 1em;
 }
@@ -177,31 +197,32 @@ main {
 	  }
 }
 
+
+
 .single-page {
+
+	header {
+		border-bottom: 3px solid #ddd !important;
+	}
+	  
+
+	>.post__header {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
     h2 {
-        position: relative;
-        background: $mainColor;
-        color:#fff;
-        font-size: 1.5em !important;
+        padding: .2em 0 .2em .8em !important;
         font-weight: bold !important;
-        // border-radius: 5px;
+        border-left: 10px solid $mainColor;
         margin-top: 40px !important;;
-        margin-bottom: 40px !important;;
-        padding: 15px 15px !important;;
-    }
-    h2:after {
-        position: absolute;
-        content: '' !important;
-        top: 100%;
-        left: 30px;
-        border: 8px solid transparent;
-        border-top: 10px solid $mainColor;
-        width: 0;
-        height: 0;
+        margin-bottom: 1em !important;
+		border-bottom: 3px solid $mainColor;
+
     }
 
     h3 {
-        font-size: 21px !important;
+        // font-size: 21px !important;
         border-left:4px solid $mainColor;
         padding: .2em 0 .2em .8em !important;
         margin-top: 1.8em !important;
@@ -256,7 +277,8 @@ main {
 }
 
 .post__meta {
-	margin-bottom: .5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	font-size: 0.8em;
 }
 
@@ -293,13 +315,6 @@ main {
 	&--subtitle {
 		font-size: .85rem; 
 	}
-}
-
-.post__header {
-
-	border-bottom: 3px solid $mainColor;
-	margin-top: 1em;
-	margin-bottom: 3em;
 }
 
 .warning {
