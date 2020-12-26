@@ -1,10 +1,12 @@
 <div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
-		<label>
-			<input class="input" style="margin-top: .3em; width: 20em" type="search" placeholder="キーワード検索" value="" name="q">
-		</label>
-		<i style="margin-left:.5em;" class="fas fa-search fa-lg"></i>
-		<input style="background-color: transparent; border-color: transparent;outline: none;  margin-left: -3em; width: 3em; height: 3em;" type="submit" value="">
-		<input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />
+		<div style="display: flex; align-items: center;">
+			<label>
+				<input class="input" style="width: 20em" type="search" placeholder="キーワード検索" value="" name="q">
+			</label>
+			<i style="margin-left:.5em;" class="fas fa-search fa-lg"></i>
+			<input style="background-color: transparent; border-color: transparent;outline: none;  margin-left: -3em;" type="submit" value="">
+			<input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />
+		</div>
 	</form>
 </div>
