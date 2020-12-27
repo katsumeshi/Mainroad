@@ -1,24 +1,36 @@
-{{- if .Site.Params.widgets.popular }}
+{{ $dataJ := getJSON .Site.Params.popularUrl }}
+
+{{ if .Site.Params.widgets.popular }}
 <div class="widget-recent widget sticky">
     <h1 class="widget__title">{{ T "popular_title" }}</h1>
-        {{ range (where .Site.Pages "File.Path" "in" .Site.Data.popular_data.populars) }}
-             <div class="columns  is-mobile">
-                {{- if .Params.thumbnail }}
+        {{ $popular_articles_num := (.Site.Params.widgets.popular_articles_num | default 10) }}
+        {{ range first $popular_articles_num $dataJ.rows }}
+            {{ with $.Site.GetPage . }}
+            <div class="columns is-mobile">
                 <div class="column is-one-quarter" style="border-bottom: 1px solid #ececec">
                     <figure class="image is-square">
                         <a href="{{ .Permalink }}">
-                            {{ $thumbnail := .Params.thumbnail}}
-                            {{ with .Site.GetPage "section" "images" }}
-                                {{ $r := .Resources.GetMatch $thumbnail }}
-                                {{ $img := ($r.Fill "100x100") }} 
-                                <img src="{{ $img.RelPermalink }}">
+                            {{ if .Params.thumbnail }}
+                                {{ $thumbnail := .Params.thumbnail }}
+                                {{ with .Site.GetPage "section" "images" }}
+                                    {{ $r := .Resources.GetMatch $thumbnail }}
+                                    {{ $img := ($r.Fill "100x100") }} 
+                                    <img src="{{ $img.RelPermalink }}">
+                                {{ end }}     
+                            {{ else }}
+                                {{ $thumbnail := .Site.Params.defaultThumbnail }}
+                                {{ with .Site.GetPage "section" "images" }}
+                                    {{ $r := .Resources.GetMatch $thumbnail }}
+                                    {{ $img := ($r.Fill "100x100") }} 
+                                    <img src="{{ $img.RelPermalink }}">
+                                {{ end }}
                             {{ end }}
                         </a>
                     </figure>
                 </div>
-                {{- end }}
                 <div class="column" style="border-bottom: 1px solid #ececec"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
             </div>
+            {{ end }}
         {{ end }}
 </div>
-{{- end }}
+{{ end }}
