@@ -14,9 +14,6 @@
 	<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
 	{{ template "_internal/google_analytics_async.html" . }}
-
-    {{ template "_internal/opengraph.html" . }}
-	{{ template "_internal/twitter_cards.html" . }}
 	
 	{{ if .Params.thumbnail }}
 		{{ $thumbnail := .Params.thumbnail }}
@@ -33,6 +30,9 @@
 			<meta property="og:image" content="{{ $img.RelPermalink }}" />
 		{{ end }}
 	{{ end }}
+
+    {{ template "_internal/opengraph.html" . }}
+	{{ template "_internal/twitter_cards.html" . }}
 </head>
 <body class="body">
 	
