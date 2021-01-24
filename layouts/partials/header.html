@@ -21,6 +21,7 @@
 			{{ $r := .Resources.GetMatch $thumbnail }}
 			{{ $img := ($r.Fill "100x100") }} 
 			<meta property="og:image" content="{{ $img.RelPermalink }}" />
+			<meta property="twitter:image" content="{{ $img.RelPermalink }}" />
 		{{ end }}
 	{{ else }}   
 		{{ $thumbnail := .Site.Params.defaultThumbnail }}
@@ -28,6 +29,7 @@
 			{{ $r := .Resources.GetMatch $thumbnail }}
 			{{ $img := ($r.Fill "100x100") }} 
 			<meta property="og:image" content="{{ $img.RelPermalink }}" />
+			<meta property="twitter:image" content="{{ $img.RelPermalink }}" />
 		{{ end }}
 	{{ end }}
 
