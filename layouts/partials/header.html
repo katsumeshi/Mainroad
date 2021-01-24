@@ -15,23 +15,8 @@
 	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
 	{{ template "_internal/google_analytics_async.html" . }}
 
-
 	{{ template "_internal/twitter_cards.html" . }}
 
-	{{ if .Params.thumbnail }}
-		{{ $thumbnail := .Params.thumbnail }}
-		{{ with .Site.GetPage "section" "images" }}
-			{{ $r := .Resources.GetMatch $thumbnail }}
-			<meta property="twitter:image" content="{{ $r.Permalink }}" />
-		{{ end }}
-	{{ else }}   
-		{{ $thumbnail := .Site.Params.defaultThumbnail }}
-		{{ with .Site.GetPage "section" "images" }}
-			{{ $r := .Resources.GetMatch $thumbnail }}
-			<meta property="twitter:image" content="{{ $r.Permalink }}" />
-		{{ end }}
-	{{ end }}
-	
 	{{ template "_internal/opengraph.html" . }}
 	
 	{{ if .Params.thumbnail }}
