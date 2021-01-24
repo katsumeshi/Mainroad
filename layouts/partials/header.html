@@ -19,17 +19,15 @@
 		{{ $thumbnail := .Params.thumbnail }}
 		{{ with .Site.GetPage "section" "images" }}
 			{{ $r := .Resources.GetMatch $thumbnail }}
-			{{ $img := ($r.Fill "100x100") }} 
-			<meta property="og:image" content="{{ $img.RelPermalink }}" />
-			<meta property="twitter:image" content="{{ $img.RelPermalink }}" />
+			<meta property="og:image" content="{{ $r.RelPermalink }}" />
+			<meta property="twitter:image" content="{{ $r.RelPermalink }}" />
 		{{ end }}
 	{{ else }}   
 		{{ $thumbnail := .Site.Params.defaultThumbnail }}
 		{{ with .Site.GetPage "section" "images" }}
 			{{ $r := .Resources.GetMatch $thumbnail }}
-			{{ $img := ($r.Fill "100x100") }} 
-			<meta property="og:image" content="{{ $img.RelPermalink }}" />
-			<meta property="twitter:image" content="{{ $img.RelPermalink }}" />
+			<meta property="og:image" content="{{ $r.RelPermalink }}" />
+			<meta property="twitter:image" content="{{ $r.RelPermalink }}" />
 		{{ end }}
 	{{ end }}
 
