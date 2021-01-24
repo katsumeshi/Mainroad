@@ -17,16 +17,8 @@
 
     {{ template "_internal/opengraph.html" . }}
 	{{ template "_internal/twitter_cards.html" . }}
+	
 	{{- define "og_image" }}
-		{{- if .Params.image }}
-			{{- $imageRes := .Resources.GetMatch .Params.image -}}
-			<meta property="og:image" content="{{ $imageRes.Permalink }}" />
-		{{- else if .Parent }}
-			{{- template "og_image" .Parent }}
-		{{- else if .Site.Params.image }}
-			<meta property="og:image" content="{{ .Site.Params.image | absURL }}" />
-		{{- end }}
-		
 		{{ if .Params.thumbnail }}
 			{{ $thumbnail := .Params.thumbnail }}
 			{{ with .Site.GetPage "section" "images" }}
